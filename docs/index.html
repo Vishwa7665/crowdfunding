@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crowdfunding DApp</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    <style>
+        #createCampaignModal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+        #createCampaignModal .modal-content {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 5px;
+            max-width: 500px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">Crowdfunding Campaigns</h1>
+        
+        <button id="createCampaignButton" class="btn btn-primary mb-4">Create Campaign</button>
+
+        <div id="createCampaignModal" style="display:none;">
+            <div class="modal-content">
+                <h2>Create a New Campaign</h2>
+                <form id="createCampaignForm">
+                    <div class="form-group">
+                        <label for="title">Title:</label>
+                        <input type="text" id="title" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="goal">Goal (in USD):</label>
+                        <input type="number" id="goal" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="duration">Duration (in days):</label>
+                        <input type="number" id="duration" class="form-control" required>
+                    </div>
+                    <button type="submit" class="btn btn-success">Create Campaign</button>
+                    <button type="button" id="closeModal" class="btn btn-secondary">Close</button>
+                </form>
+            </div>
+        </div>
+
+        <hr>
+
+        <div id="campaignsList">
+            <h2>All Campaigns</h2>
+            <ul id="campaigns" class="list-group">
+            </ul>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+    <script src="/docs/js/contract-interaction.js"></script>
+    <script src="/docs/js/modal-script.js"></script>
+</body>
+</html>

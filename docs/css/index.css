@@ -1,0 +1,22 @@
+#campaignsList {
+  margin-top: 20px;
+}
+
+.list-group-item {
+  cursor: pointer;
+}
+
+#campaignsList h2 {
+  margin-bottom: 20px;
+}
+
+#campaignsList ul {
+  padding-left: 0;
+}
+
+#campaignsList ul li {
+  border-radius: 0.25rem;
+  padding: 15px;
+  margin-bottom: 10px;
+  background: #f8f9fa;
+}
