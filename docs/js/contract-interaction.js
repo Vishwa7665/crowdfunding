@@ -538,7 +538,7 @@ async function loadCampaigns() {
         for (let i = 1; i <= campaignCount; i++) {
             const campaign = await contract.methods.campaigns(i).call();
             const campaignElement = document.createElement('li');
-            campaignElement.innerHTML = `<a href="/docs/campaign.html?id=${i}">${campaign.title}</a> (Goal: ${web3.utils.fromWei(campaign.goal, 'ether')} USD)`;
+            campaignElement.innerHTML = `<a href="/campaign.html?id=${i}">${campaign.title}</a> (Goal: ${web3.utils.fromWei(campaign.goal, 'ether')} USDT)`;
             campaignsElement.appendChild(campaignElement);
         }
     } catch (error) {
